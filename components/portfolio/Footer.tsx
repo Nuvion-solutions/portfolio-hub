@@ -18,7 +18,7 @@ export default function Footer() {
 
           <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-p-muted">
             <Link href="/case-studies" className="hover:text-p-fg transition-colors">Work</Link>
-            <Link href="/#services"    className="hover:text-p-fg transition-colors">Pricing</Link>
+            <Link href="/#services"    className="hover:text-p-fg transition-colors">Services</Link>
             <Link href="/#process"     className="hover:text-p-fg transition-colors">Process</Link>
             <Link href="/#faq"         className="hover:text-p-fg transition-colors">FAQ</Link>
             <Link href="/contact"      className="hover:text-p-fg transition-colors">Contact</Link>

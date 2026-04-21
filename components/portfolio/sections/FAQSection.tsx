@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: 'What does a website typically cost?',
-    a: 'Simple professional sites (5–8 pages, contact forms, mobile-ready) typically start at $1,500–$2,500. Custom brand-forward builds with booking systems and lead generation run $2,500–$5,000. Full AI-powered systems start at $5,000. Every project gets a fixed-price quote — no hourly billing, no surprise invoices.',
+    a: 'Every project is scoped and priced individually — there\'s no one-size-fits-all answer, and we\'d rather give you an honest number than a misleading range. We work with all budgets, including nonprofits and referrals, and we always discuss pricing personally before anything is agreed to. Reach out and we\'ll have a real conversation about what makes sense for your situation.',
   },
   {
     q: 'How long does a project take?',

@@ -104,9 +104,9 @@ export default function ProcessSection() {
           </div>
           <div className="flex shrink-0 flex-wrap justify-center gap-4 sm:justify-end">
             {[
-              { label: 'Simple Site',   time: '2–3 weeks' },
-              { label: 'Custom Build',  time: '4–5 weeks' },
-              { label: 'AI System',     time: '6–8 weeks' },
+              { label: 'Essential',    time: '2–3 weeks' },
+              { label: 'Growth',       time: '4–5 weeks' },
+              { label: 'Full System',  time: '6–8 weeks' },
             ].map((t) => (
               <div key={t.label} className="text-center">
                 <p className="font-heading text-base font-bold text-p-accent">{t.time}</p>
