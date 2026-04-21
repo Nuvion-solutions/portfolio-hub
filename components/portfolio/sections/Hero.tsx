@@ -83,7 +83,7 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button asChild size="lg">
-            <Link href="/#work">
+            <Link href="/case-studies">
               View Our Work
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -99,9 +99,9 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           custom={0.4}
-          className="mt-16 flex items-center justify-center gap-8 opacity-50"
+          className="mt-16 flex flex-wrap items-center justify-center gap-6 opacity-50"
         >
-          {['Med Spa', 'AI Startup', 'Restaurant', 'Law Firm', 'Home Services'].map((niche) => (
+          {['Med Spa', 'AI Startup', 'Restaurant', 'Law Firm', 'Home Services', 'Luxury Automotive'].map((niche) => (
             <span key={niche} className="text-xs font-medium text-p-muted">
               {niche}
             </span>

@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { Send, CheckCircle2 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Send, CheckCircle2, RotateCcw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const NICHES = ['Med Spa', 'AI/Tech Startup', 'Restaurant', 'Law Firm', 'Home Services', 'Other']
+const NICHES = ['Med Spa', 'AI/Tech Startup', 'Restaurant', 'Law Firm', 'Home Services', 'Luxury Automotive', 'Other']
 
 const INPUT_CLASS =
   'w-full rounded-lg border border-p-card-border bg-p-card px-4 py-2.5 text-sm text-p-fg placeholder:text-p-muted/50 focus:border-p-accent focus:outline-none focus:ring-1 focus:ring-p-accent transition-colors'
@@ -12,6 +12,13 @@ const INPUT_CLASS =
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [error,  setError]  = useState('')
+
+  useEffect(() => {
+    if (status === 'error') {
+      const t = setTimeout(() => setError(''), 6000)
+      return () => clearTimeout(t)
+    }
+  }, [status])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -36,7 +43,7 @@ export default function ContactForm() {
       setStatus('success')
     } catch (err) {
       setStatus('error')
-      setError(err instanceof Error ? err.message : 'Something went wrong.')
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     }
   }
 
@@ -51,6 +58,13 @@ export default function ContactForm() {
           <p className="mt-3 text-p-muted">
             Thanks for reaching out. We&apos;ll respond within 24 hours with a custom strategy.
           </p>
+          <button
+            onClick={() => setStatus('idle')}
+            className="mt-8 inline-flex items-center gap-2 rounded-lg border border-p-card-border px-5 py-2.5 text-sm font-medium text-p-muted transition-colors hover:border-p-accent/40 hover:text-p-accent"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Send another message
+          </button>
         </div>
       </div>
     )
@@ -70,27 +84,27 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
+              <label htmlFor="name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
                 Name
               </label>
-              <input name="name" required placeholder="Jane Smith" className={INPUT_CLASS} />
+              <input id="name" name="name" required autoComplete="name" placeholder="Jane Smith" className={INPUT_CLASS} />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
+              <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
                 Email
               </label>
-              <input name="email" type="email" required placeholder="jane@business.com" className={INPUT_CLASS} />
+              <input id="email" name="email" type="email" required autoComplete="email" placeholder="jane@business.com" className={INPUT_CLASS} />
             </div>
           </div>
 
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
+            <label htmlFor="niche" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
               Industry
             </label>
-            <select name="niche" required className={INPUT_CLASS}>
+            <select id="niche" name="niche" required className={INPUT_CLASS} defaultValue="">
               <option value="" disabled>Select your industry</option>
               {NICHES.map((n) => (
                 <option key={n} value={n}>{n}</option>
@@ -99,10 +113,11 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
+            <label htmlFor="message" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
               Tell us about your project
             </label>
             <textarea
+              id="message"
               name="message"
               required
               rows={5}
@@ -111,10 +126,25 @@ export default function ContactForm() {
             />
           </div>
 
-          {error && <p className="text-sm text-red-400">{error}</p>}
+          {error && (
+            <p role="alert" className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2.5 text-sm text-red-400">
+              {error}
+            </p>
+          )}
 
-          <Button type="submit" size="lg" className="w-full" disabled={status === 'loading'}>
-            {status === 'loading' ? 'Sending…' : (
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full"
+            disabled={status === 'loading'}
+            aria-busy={status === 'loading'}
+          >
+            {status === 'loading' ? (
+              <span className="flex items-center justify-center gap-2">
+                <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" style={{ animationDuration: '0.8s' }} />
+                Sending…
+              </span>
+            ) : (
               <>Send Message <Send className="h-4 w-4" /></>
             )}
           </Button>

@@ -8,7 +8,8 @@ import type { Niche } from '@/lib/portfolio/mdx'
 
 export const metadata: Metadata = {
   title:       'Case Studies',
-  description: 'Browse all Nuvion Solutions projects — AI-powered web experiences across five industries.',
+  description: 'Browse all Nuvion Solutions projects — AI-powered web experiences across med spa, tech, restaurant, law, home services, and luxury automotive.',
+  alternates:  { canonical: '/case-studies' },
 }
 
 interface PageProps {
@@ -49,8 +50,15 @@ export default function CaseStudiesPage({ searchParams }: PageProps) {
         </p>
 
         {studies.length === 0 ? (
-          <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-p-card-border">
-            <p className="text-sm text-p-muted">No case studies in this category yet.</p>
+          <div className="flex h-64 flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-p-card-border">
+            <p className="text-sm font-medium text-p-fg">No projects in {activeNiche} yet</p>
+            <p className="text-xs text-p-muted">Check back soon, or browse all industries</p>
+            <a
+              href="/case-studies"
+              className="text-xs font-semibold text-p-accent hover:underline"
+            >
+              View all projects →
+            </a>
           </div>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

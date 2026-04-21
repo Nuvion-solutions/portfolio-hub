@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -19,9 +19,10 @@ const idleCs   = 'border-p-card-border text-p-muted hover:border-p-fg/30 hover:t
 export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProps) {
   const [activeNiche, setActiveNiche] = useState<Niche | null>(null)
 
-  const filtered = activeNiche
-    ? studies.filter((s) => s.niche === activeNiche)
-    : studies
+  const filtered = useMemo(
+    () => activeNiche ? studies.filter((s) => s.niche === activeNiche) : studies,
+    [activeNiche, studies],
+  )
 
   if (studies.length === 0) return null
 
@@ -62,7 +63,8 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
         >
           <button
             onClick={() => setActiveNiche(null)}
-            className={`${base} ${activeNiche === null ? activeCs : idleCs}`}
+            aria-pressed={activeNiche === null}
+            className={`${base} ${activeNiche === null ? activeCs : idleCs} focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent`}
           >
             All
           </button>
@@ -70,7 +72,8 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
             <button
               key={n.slug}
               onClick={() => setActiveNiche(n.label)}
-              className={`${base} ${activeNiche === n.label ? activeCs : idleCs}`}
+              aria-pressed={activeNiche === n.label}
+              className={`${base} ${activeNiche === n.label ? activeCs : idleCs} focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent`}
             >
               {n.label}
             </button>
