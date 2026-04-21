@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 const CASE_STUDIES_DIR = path.join(process.cwd(), 'content/case-studies')
 
-export type Niche = 'Med Spa' | 'AI/Tech Startup' | 'Restaurant' | 'Law Firm' | 'Home Services'
+export type Niche = 'Med Spa' | 'AI/Tech Startup' | 'Restaurant' | 'Law Firm' | 'Home Services' | 'Luxury Automotive'
 
 export interface CaseStudyMeta {
   slug:        string

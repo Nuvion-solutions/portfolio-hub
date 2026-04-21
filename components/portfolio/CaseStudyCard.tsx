@@ -58,6 +58,14 @@ const NICHE_STYLES: Record<string, NicheStyle> = {
     placeholderIcon:   'text-emerald-400',
     placeholderText:   'text-emerald-400/60',
   },
+  'Luxury Automotive': {
+    badge:             'text-red-400 border-red-400/20 bg-red-400/10',
+    icon:              '▲',
+    placeholderBg:     'from-red-950/40 to-p-bg',
+    placeholderBorder: 'border-red-500/20',
+    placeholderIcon:   'text-red-400',
+    placeholderText:   'text-red-400/60',
+  },
 }
 
 const FALLBACK_STYLE: NicheStyle = {

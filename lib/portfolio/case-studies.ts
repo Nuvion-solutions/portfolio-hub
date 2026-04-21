@@ -38,6 +38,12 @@ export const NICHES: NicheConfig[] = [
     description: 'Quote calculators, review showcases, and service-area landing pages.',
     icon:        '◉',
   },
+  {
+    label:       'Luxury Automotive',
+    slug:        'luxury-automotive',
+    description: 'Cinematic dealer experiences with AI configurators, valuation tools, and global acquisition concierge.',
+    icon:        '▲',
+  },
 ]
 
 export const SERVICES = [

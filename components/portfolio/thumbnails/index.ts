@@ -4,6 +4,7 @@ import NexusThumbnail    from './NexusThumbnail'
 import IronCladThumbnail from './IronCladThumbnail'
 import HargroveThumbnail from './HargroveThumbnail'
 import VerdantThumbnail  from './VerdantThumbnail'
+import VeloceThumbnail   from './VeloceThumbnail'
 
 export const THUMBNAILS: Record<string, React.ComponentType> = {
   'lumina-aesthetics':      LuminaThumbnail,
@@ -11,4 +12,5 @@ export const THUMBNAILS: Record<string, React.ComponentType> = {
   'ironclad-home-services': IronCladThumbnail,
   'hargrove-associates':    HargroveThumbnail,
   'verdant-nyc':            VerdantThumbnail,
+  'veloce-supercars':       VeloceThumbnail,
 }

@@ -236,5 +236,6 @@ No special build configuration needed — Vercel detects Next.js automatically.
 | `hargrove-associates`     | Law Firm        | ✓        | Demo ready |
 | `ironclad-home-services`  | Home Services   | ✓        | Demo ready |
 | `verdant-nyc`             | Restaurant      | ✓        | Demo ready |
+| `veloce-supercars`        | Luxury Automotive | ✓      | Demo ready |
 
 Add rows here as new case studies are created.

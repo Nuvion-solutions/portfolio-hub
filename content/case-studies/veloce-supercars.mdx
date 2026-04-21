@@ -1,0 +1,91 @@
+---
+title: "Cinematic Supercar Experience"
+client: "Demo: VELOCE Supercars"
+niche: "Luxury Automotive"
+services:
+  - "AI Car Configurator"
+  - "AI Valuation Tool"
+  - "Concierge Chat"
+  - "Custom Web Design"
+  - "Performance Optimization"
+liveUrl: "https://supercars.nuvion-solutions.com"
+featured: true
+excerpt: "A cinematic, immersive supercar dealership experience built for VELOCE — featuring six simultaneous visual effects layers, a dedicated Porsche GT3 RS hero showcase, AI-powered configurator, real-time valuation engine, and a 24/7 concierge chat across 12 cars from 7 elite brands."
+results:
+  - "6 simultaneous cinematic effects running at once"
+  - "Porsche GT3 RS dedicated hero showcase"
+  - "12 supercars across 7 brands with individual pages"
+  - "AI configurator, valuation tool, and concierge chat"
+publishedAt: "2026-04-20"
+---
+
+## The Brief
+
+VELOCE Supercars needed a digital presence that matched the visceral experience of walking onto their showroom floor — a site that made visitors *feel* the cars before they ever touched a steering wheel. The ask: cinematic visuals, bespoke AI tooling, and a frictionless path from discovery to acquisition inquiry.
+
+The Porsche 911 GT3 RS in Guards Red was designated the anchor of the entire experience — a machine that represents the philosophical north star of the brand: no turbos, no hybrids, mechanical perfection.
+
+<StatRow stats={[
+  { value: "6", label: "Cinematic effects", sub: "running simultaneously" },
+  { value: "12", label: "Supercars", sub: "across 7 elite brands" },
+  { value: "3", label: "AI tools", sub: "configurator, valuation, concierge" },
+  { value: "97%", label: "AI match score", sub: "GT3 RS for track buyers" }
+]} />
+
+## The Experience
+
+The site opens with **ScrollCinema** — a full-viewport speed sequence driven by GSAP ScrollTrigger, counting up to 184 mph as the user scrolls. Six layers run in parallel: animated particle streams, a WebGL Three.js wireframe scene, a custom cursor with spring-lag ring and amber trail, horizontal speed-blur particles, and a red scrollbar that pulses on scroll.
+
+### Dedicated GT3 RS Hero
+
+Below the fold, the Porsche 911 GT3 RS gets its own full-bleed section — Guards Red background, four spec callouts (525hp / 9,000 RPM redline / 3.0s 0–60 / 184 mph top), and a prominent "EDITOR'S PICK" badge. Copy deliberately leans into what makes it singular in a market overrun by turbocharged and electrified alternatives.
+
+<QuoteCard
+  quote="The GT3 RS is the last of a dying breed — a naturally aspirated 9,000 RPM masterpiece. We needed the site to communicate that before a single spec was read."
+  name="VELOCE Creative Director"
+  role="Demo: VELOCE Supercars"
+/>
+
+### AI Configurator
+
+The AI configurator collects buyer preferences — budget, driving style, brand affinity, and use case — and returns a ranked shortlist with match percentages. Track-focused buyers with no brand preference receive the GT3 RS at 97% match. High-budget Ferrari enthusiasts get the SF90 Stradale. The system is powered by a Next.js API route with deterministic keyword routing for demo reliability.
+
+### Valuation Tool
+
+Real-time trade-in estimates for existing supercars. Users enter make, model, year, mileage, and condition. The tool returns an AI-generated fair market range with a "collector premium" flag for low-production vehicles. Designed to lower acquisition friction and qualify leads before a human conversation.
+
+### 24/7 Concierge Chat
+
+A persistent chat widget handles pre-sale questions, comparison requests, and global acquisition inquiries. The concierge responds with car-specific knowledge — GT3 RS delivery timelines, Pagani bespoke options, Bugatti allocation processes — keeping high-intent buyers engaged outside business hours.
+
+<TechList
+  heading="Technical Stack"
+  items={[
+    "Next.js 14 App Router",
+    "Three.js / @react-three/fiber",
+    "GSAP ScrollTrigger",
+    "Framer Motion",
+    "Canvas API",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vercel"
+  ]}
+/>
+
+## Inventory Architecture
+
+Twelve cars span seven brands: Porsche, Ferrari, Lamborghini, McLaren, Pagani, Bugatti, and Aston Martin. Each car has a dedicated detail page with full specs, highlights, mileage, and a direct acquisition CTA. The inventory is typed in a central `lib/inventory.ts` module — swapping in a real CMS or DMS integration requires only replacing the data source, not the component layer.
+
+<ResultsBlock
+  heading="Delivered"
+  items={[
+    "Full cinematic homepage with 6 simultaneous effect layers",
+    "Porsche 911 GT3 RS dedicated hero section with Guards Red full-bleed design",
+    "12-car inventory across 7 brands with individual detail pages",
+    "AI configurator returning personalized match scores",
+    "Real-time valuation tool with collector premium flagging",
+    "24/7 concierge chat with car-specific knowledge routing",
+    "Custom cursor, speed particles, and GSAP scroll animations",
+    "Clean production build — zero ESLint errors, 23 static pages"
+  ]}
+/>
