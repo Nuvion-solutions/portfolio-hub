@@ -6,10 +6,10 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const NAV_LINKS = [
+  { href: 'https://www.nuvion-solutions.com',   label: 'Main Site', external: true },
   { href: '/case-studies',                      label: 'Work' },
   { href: '/#services',                         label: 'Services' },
   { href: '/#about',                            label: 'About' },
-  { href: 'https://www.nuvion-solutions.com',   label: 'Main Site', external: true },
 ]
 
 export default function Navbar() {
