@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             src="/portfolio/nuvion-logo.png"
             alt="Nuvion Solutions"
-            className="h-9 w-auto object-contain"
+            className="w-[150px] h-auto object-contain"
           />
         </Link>
 

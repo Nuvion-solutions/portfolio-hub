@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src="/portfolio/nuvion-logo.png"
                 alt="Nuvion Solutions"
-                className="h-8 w-auto object-contain"
+                className="w-[150px] h-auto object-contain"
               />
             </Link>
             <p className="mt-2 text-xs text-p-muted">
