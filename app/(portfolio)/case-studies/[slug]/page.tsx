@@ -102,6 +102,18 @@ export default function CaseStudyPage({ params }: PageProps) {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-p-muted">{study.excerpt}</p>
 
+          {study.liveUrl && (
+            <a
+              href={study.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-p-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-p-accent/30 transition-all hover:bg-p-accent-hover hover:shadow-xl hover:shadow-p-accent/40 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent"
+            >
+              View Live Site
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
+
           {/* Meta row */}
           <div className="mt-8 flex flex-wrap gap-6">
             <div>
@@ -116,19 +128,6 @@ export default function CaseStudyPage({ params }: PageProps) {
                 ))}
               </div>
             </div>
-            {study.liveUrl && (
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-p-muted">Live Site</p>
-                <a
-                  href={study.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-1 text-sm text-p-accent hover:underline"
-                >
-                  View Live <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
-            )}
           </div>
         </div>
       </div>
