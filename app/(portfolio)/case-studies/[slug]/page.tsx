@@ -34,9 +34,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: study.excerpt,
         type:        'article',
         url:         `${baseUrl}/case-studies/${study.slug}`,
-        images:      study.coverImage
-          ? [{ url: study.coverImage, width: 1280, height: 720, alt: study.title }]
-          : [{ url: `${baseUrl}/og-default.jpg`, width: 1200, height: 630, alt: 'Nuvion Solutions' }],
+        ...(study.coverImage && {
+          images: [{ url: study.coverImage, width: 1280, height: 720, alt: study.title }],
+        }),
       },
       twitter: {
         card:        'summary_large_image',

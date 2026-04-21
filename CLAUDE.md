@@ -111,8 +111,11 @@ publishedAt: "2026-04-20"     # ISO date — sorts newest first
 - `Restaurant`
 - `Law Firm`
 - `Home Services`
+- `Luxury Automotive`
+- `Non-Profit`
+- `Luxury Aviation`
 
-Adding a new niche requires updating `NICHES` in `lib/portfolio/case-studies.ts`.
+Adding a new niche requires updating `NICHES` in `lib/portfolio/case-studies.ts`, the `Niche` type in `lib/portfolio/mdx.ts`, and `NICHE_STYLES` in `components/portfolio/CaseStudyCard.tsx`.
 
 ---
 
@@ -229,13 +232,16 @@ No special build configuration needed — Vercel detects Next.js automatically.
 
 ## Current Case Studies
 
-| Slug                      | Niche           | Featured | Status     |
-|---------------------------|-----------------|----------|------------|
-| `lumina-aesthetics`       | Med Spa         | ✓        | Demo ready |
-| `nexus-ai`                | AI/Tech Startup | ✓        | Demo ready |
-| `hargrove-associates`     | Law Firm        | ✓        | Demo ready |
-| `ironclad-home-services`  | Home Services   | ✓        | Demo ready |
-| `verdant-nyc`             | Restaurant      | ✓        | Demo ready |
-| `veloce-supercars`        | Luxury Automotive | ✓      | Demo ready |
+| Slug                      | Niche             | Featured | Status     |
+|---------------------------|-------------------|----------|------------|
+| `lumina-aesthetics`       | Med Spa           | ✓        | Demo ready |
+| `nexus-ai`                | AI/Tech Startup   | ✓        | Demo ready |
+| `hargrove-associates`     | Law Firm          | ✓        | Demo ready |
+| `ironclad-home-services`  | Home Services     | ✓        | Demo ready |
+| `verdant-nyc`             | Restaurant        | ✓        | Demo ready |
+| `veloce-supercars`        | Luxury Automotive | ✓        | Demo ready |
+| `tide-foundation`         | Non-Profit        | ✓        | Demo ready |
+| `luminary-foundation`     | Non-Profit        | ✓        | Demo ready |
+| `apex-aviation`           | Luxury Aviation   | ✓        | Demo ready |
 
 Add rows here as new case studies are created.

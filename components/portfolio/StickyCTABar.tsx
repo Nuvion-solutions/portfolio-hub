@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { X, ArrowRight } from 'lucide-react'
 
 const STORAGE_KEY = 'portfolio-cta-dismissed'
@@ -12,7 +13,6 @@ export default function StickyCTABar() {
 
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return
-    // Small delay so it slides in after the page settles
     const t = setTimeout(() => setVisible(true), 1200)
     return () => clearTimeout(t)
   }, [])
@@ -37,20 +37,18 @@ export default function StickyCTABar() {
         </p>
 
         <div className="flex shrink-0 items-center gap-3">
-          <a
-            href="https://nuvion-solutions.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-p-accent px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-p-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-p-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-p-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
           >
             Start a Project
             <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+          </Link>
 
           <button
             onClick={dismiss}
             aria-label="Dismiss"
-            className="rounded-md p-1 text-p-muted transition-colors hover:text-p-fg focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
+            className="rounded-md p-2 text-p-muted transition-colors hover:text-p-fg focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
           >
             <X className="h-4 w-4" />
           </button>
