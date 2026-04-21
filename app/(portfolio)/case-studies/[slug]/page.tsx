@@ -103,15 +103,20 @@ export default function CaseStudyPage({ params }: PageProps) {
           <p className="mt-4 max-w-2xl text-lg text-p-muted">{study.excerpt}</p>
 
           {study.liveUrl && (
-            <a
-              href={study.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-p-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-p-accent/30 transition-all hover:bg-p-accent-hover hover:shadow-xl hover:shadow-p-accent/40 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent"
-            >
-              View Live Site
-              <ExternalLink className="h-4 w-4" />
-            </a>
+            <div className="mt-6">
+              <a
+                href={study.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-p-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-p-accent/30 transition-all hover:bg-p-accent-hover hover:shadow-xl hover:shadow-p-accent/40 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent"
+              >
+                View Live Demo Site
+                <ExternalLink className="h-4 w-4" />
+              </a>
+              <p className="mt-3 max-w-xl text-xs italic text-p-muted">
+                *This is not the client's real site — it's a demo built for our portfolio that you can interact with, but certain features like forms or AI features may not work.
+              </p>
+            </div>
           )}
 
           {/* Meta row */}
