@@ -27,7 +27,14 @@ export default function Footer() {
         <div className="mt-8 border-t border-p-card-border pt-6 text-center text-xs text-p-muted">
           © {year} Nuvion Solutions. All rights reserved.
           <span className="mx-2 opacity-30">·</span>
-          <span className="text-p-accent/60">portfolio.nuvion-solutions.com</span>
+          <a
+            href="https://nuvion-solutions.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-p-accent/60 hover:text-p-accent transition-colors"
+          >
+            nuvion-solutions.com
+          </a>
         </div>
       </div>
     </footer>

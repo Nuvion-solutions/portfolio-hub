@@ -48,7 +48,32 @@ export default function CaseStudyPage({ params }: PageProps) {
     year: 'numeric', month: 'long', day: 'numeric',
   })
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://portfolio.nuvion-solutions.com'
+  const jsonLd = {
+    '@context':  'https://schema.org',
+    '@type':     'Article',
+    headline:    study.title,
+    description: study.excerpt,
+    datePublished: study.publishedAt,
+    url:         `${baseUrl}/case-studies/${study.slug}`,
+    author: {
+      '@type': 'Organization',
+      name:    'Nuvion Solutions',
+      url:     'https://nuvion-solutions.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name:    'Nuvion Solutions',
+      url:     'https://nuvion-solutions.com',
+    },
+  }
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
     <div className="min-h-screen pb-24 pt-24">
       {/* Back nav */}
       <div className="px-6 pb-8">
@@ -137,5 +162,6 @@ export default function CaseStudyPage({ params }: PageProps) {
         </div>
       </div>
     </div>
+    </>
   )
 }

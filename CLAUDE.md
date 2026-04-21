@@ -229,8 +229,12 @@ No special build configuration needed — Vercel detects Next.js automatically.
 
 ## Current Case Studies
 
-| Slug                  | Niche    | Featured | Status     |
-|-----------------------|----------|----------|------------|
-| `lumina-aesthetics`   | Med Spa  | ✓        | Demo ready |
+| Slug                      | Niche           | Featured | Status     |
+|---------------------------|-----------------|----------|------------|
+| `lumina-aesthetics`       | Med Spa         | ✓        | Demo ready |
+| `nexus-ai`                | AI/Tech Startup | ✓        | Demo ready |
+| `hargrove-associates`     | Law Firm        | ✓        | Demo ready |
+| `ironclad-home-services`  | Home Services   | ✓        | Demo ready |
+| `verdant-nyc`             | Restaurant      | ✓        | Demo ready |
 
 Add rows here as new case studies are created.
