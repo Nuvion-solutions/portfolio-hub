@@ -5,12 +5,6 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const PRICING = [
-  { label: 'Simple Site',  price: 'From $1,500' },
-  { label: 'Custom Build', price: 'From $3,500' },
-  { label: 'AI System',    price: 'From $5,000' },
-]
-
 export default function ContactCTA() {
   return (
     <section className="py-24 px-6">
@@ -45,20 +39,11 @@ export default function ContactCTA() {
               <span className="text-gradient">digital presence?</span>
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-p-muted">
-              Tell us about your business. We&apos;ll respond within 24 hours with a custom
-              strategy — no generic proposals, no hard sell.
+              Tell us about your business. Every budget is welcome — nonprofits, referrals,
+              startups, and trades too. We&apos;ll have a real conversation and figure out
+              what works for you.
             </p>
-
-            {/* Pricing signal */}
-            <div className="mx-auto mt-8 flex flex-wrap justify-center gap-6">
-              {PRICING.map((p) => (
-                <div key={p.label} className="text-center">
-                  <p className="font-heading text-lg font-bold text-p-fg">{p.price}</p>
-                  <p className="text-xs text-p-muted">{p.label}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-p-muted/60">Fixed-price quotes · No hourly billing · No surprises</p>
+            <p className="mt-3 text-xs text-p-muted/60">No packages · No pressure · Pricing always discussed personally</p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg">

@@ -7,51 +7,45 @@ import { NICHES } from '@/lib/portfolio/case-studies'
 
 const TIERS = [
   {
-    name:        'Starter',
+    name:        'Simple & Clean',
     tagline:     'Professional online presence',
-    price:       'From $1,500',
-    description: 'A clean, fast, mobile-first website for businesses that need to look great online — without the complexity.',
+    badge:       null,
+    description: 'A fast, beautiful website that makes your business look credible and makes it easy for customers to reach you.',
     features: [
-      'Up to 8 custom-designed pages',
+      'Custom-designed pages',
       'Mobile-first, responsive build',
       'Contact & lead capture forms',
       'Google Analytics + SEO setup',
       'Social media integration',
-      '2–3 week turnaround',
     ],
-    cta:       'Get Started',
     highlight: false,
   },
   {
-    name:        'Growth',
-    tagline:     'Built to generate leads',
-    price:       'From $3,500',
-    description: 'A custom-built site with lead generation tools, booking systems, and local SEO that drives real, measurable business.',
+    name:        'Lead-Generating',
+    tagline:     'Built to grow your business',
+    badge:       'Most Requested',
+    description: 'A conversion-focused site with booking, lead tools, and local SEO that actively brings in new customers.',
     features: [
-      'Everything in Starter',
+      'Everything in Simple & Clean',
       'Online booking / scheduling',
       'Lead qualification system',
       'Local SEO optimization',
       'CRM integration',
-      '4–5 week turnaround',
     ],
-    cta:       'Most Popular',
     highlight: true,
   },
   {
-    name:        'Flagship',
-    tagline:     'AI-powered business system',
-    price:       'From $5,000',
-    description: 'A full AI-powered digital system — automated, intelligent, and built to scale with your business.',
+    name:        'AI-Powered',
+    tagline:     'Full digital system',
+    badge:       null,
+    description: 'An intelligent, automated platform — AI chat, smart workflows, and integrations that run your business online.',
     features: [
-      'Everything in Growth',
+      'Everything in Lead-Generating',
       'AI chatbot or recommendation tool',
       'Custom automation workflows',
       'Third-party API integrations',
       'Dashboard & reporting',
-      '6–8 week turnaround',
     ],
-    cta:       'Let\'s Talk',
     highlight: false,
   },
 ]
@@ -77,8 +71,8 @@ export default function ServicesSection() {
             <span className="text-gradient">We Build Both</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-p-muted">
-            Pick the level that fits your business right now. Every tier uses the same
-            custom-first approach — no templates, no shortcuts.
+            Every project is different. We work with all budgets — from referrals and nonprofits
+            to full custom builds. No pressure, no packages. Just a real conversation about what you need.
           </p>
         </motion.div>
 
@@ -96,17 +90,16 @@ export default function ServicesSection() {
                   : 'border-p-card-border bg-p-card'
               }`}
             >
-              {tier.highlight && (
+              {tier.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="rounded-full bg-p-accent px-4 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-[0_0_16px_rgba(108,99,255,0.5)]">
-                    Most Popular
+                    {tier.badge}
                   </span>
                 </div>
               )}
 
               <p className="text-xs font-semibold uppercase tracking-wider text-p-muted">{tier.tagline}</p>
               <h3 className="mt-1 font-heading text-2xl font-bold text-p-fg">{tier.name}</h3>
-              <p className="mt-1 text-2xl font-bold text-p-accent">{tier.price}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-p-muted">{tier.description}</p>
 
               <ul className="mt-6 space-y-2.5">
@@ -126,7 +119,7 @@ export default function ServicesSection() {
                     : 'border border-p-card-border text-p-fg hover:border-p-accent/40 hover:text-p-accent'
                 } focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent`}
               >
-                {tier.highlight ? tier.cta : `Start with ${tier.name}`}
+                Let&apos;s Talk
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
@@ -140,9 +133,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6 text-center text-xs text-p-muted"
         >
-          All projects include fixed-price quotes — no hourly billing, no surprise invoices.{' '}
+          Every budget is welcome — nonprofits, referrals, startups, and everything in between.
+          Pricing is always discussed personally.{' '}
           <Link href="/contact" className="text-p-accent hover:underline">
-            Get a free quote →
+            Start the conversation →
           </Link>
         </motion.p>
 
