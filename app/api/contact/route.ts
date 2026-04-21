@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
   }
 
-  const to   = process.env.CONTACT_EMAIL_TO ?? 'hello@nuvion-solutions.com'
+  const to   = process.env.CONTACT_EMAIL_TO   ?? 'djprudhomme04@gmail.com'
   const from = process.env.CONTACT_EMAIL_FROM ?? 'Nuvion Portfolio <onboarding@resend.dev>'
 
   const resend = new Resend(apiKey)
