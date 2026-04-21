@@ -73,6 +73,24 @@ const NICHE_STYLES: Record<string, NicheStyle> = {
     placeholderText:   'text-red-400/60',
     liveBg:            'bg-red-600 hover:bg-red-500',
   },
+  'Non-Profit': {
+    badge:             'text-teal-400 border-teal-400/20 bg-teal-400/10',
+    icon:              '◎',
+    placeholderBg:     'from-teal-950/40 to-p-bg',
+    placeholderBorder: 'border-teal-500/20',
+    placeholderIcon:   'text-teal-400',
+    placeholderText:   'text-teal-400/60',
+    liveBg:            'bg-teal-600 hover:bg-teal-500',
+  },
+  'Luxury Aviation': {
+    badge:             'text-blue-300 border-blue-300/20 bg-blue-300/10',
+    icon:              '✦',
+    placeholderBg:     'from-blue-950/40 to-p-bg',
+    placeholderBorder: 'border-blue-400/20',
+    placeholderIcon:   'text-blue-300',
+    placeholderText:   'text-blue-300/60',
+    liveBg:            'bg-blue-600 hover:bg-blue-500',
+  },
 }
 
 const FALLBACK_STYLE: NicheStyle = {

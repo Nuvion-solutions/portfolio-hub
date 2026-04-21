@@ -44,6 +44,18 @@ export const NICHES: NicheConfig[] = [
     description: 'Cinematic dealer experiences with AI configurators, valuation tools, and global acquisition concierge.',
     icon:        '▲',
   },
+  {
+    label:       'Non-Profit',
+    slug:        'non-profit',
+    description: 'Mission-driven platforms with donation automation, impact tracking, and community tools that amplify cause awareness.',
+    icon:        '◎',
+  },
+  {
+    label:       'Luxury Aviation',
+    slug:        'luxury-aviation',
+    description: 'Cinematic private aviation experiences with AI concierge, instant quote engines, and fleet showcases.',
+    icon:        '✦',
+  },
 ]
 
 export const SERVICES = [
