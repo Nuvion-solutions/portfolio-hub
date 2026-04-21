@@ -53,6 +53,28 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
           </Link>
         </motion.div>
 
+        {/* Live demos callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 flex items-start gap-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-5 py-4"
+        >
+          <span className="relative mt-0.5 flex h-3 w-3 shrink-0">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
+          </span>
+          <div>
+            <p className="text-sm font-semibold text-p-fg">
+              Every project below is a live, working demo — not a mockup.
+            </p>
+            <p className="mt-0.5 text-sm text-p-muted">
+              Real AI, real booking systems, running right now. Click any card and try it yourself.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Filter buttons */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
