@@ -31,7 +31,8 @@ export default function NicheFilter({ active }: NicheFilterProps) {
     <div className="flex flex-wrap gap-2 mb-10">
       <button
         onClick={() => select(null)}
-        className={`${base} ${active === null ? active_cls : idle_cls}`}
+        aria-pressed={active === null}
+        className={`${base} ${active === null ? active_cls : idle_cls} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent`}
       >
         All
       </button>
@@ -39,7 +40,8 @@ export default function NicheFilter({ active }: NicheFilterProps) {
         <button
           key={n.slug}
           onClick={() => select(n.label)}
-          className={`${base} ${active === n.label ? active_cls : idle_cls}`}
+          aria-pressed={active === n.label}
+          className={`${base} ${active === n.label ? active_cls : idle_cls} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent`}
         >
           {n.label}
         </button>

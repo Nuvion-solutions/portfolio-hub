@@ -35,7 +35,7 @@ export default function CaseStudiesPage({ searchParams }: PageProps) {
           </p>
           <h1 className="font-heading text-5xl font-bold text-p-fg">All Projects</h1>
           <p className="mt-4 max-w-lg text-p-muted">
-            Real demos and client work across med spa, tech, restaurant, legal, and home services.
+            Real demos and client work across med spa, tech, restaurant, legal, home services, and luxury automotive.
           </p>
         </div>
 

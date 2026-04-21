@@ -59,9 +59,11 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="flex md:hidden text-p-muted hover:text-p-fg transition-colors"
+          className="flex md:hidden text-p-muted hover:text-p-fg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent rounded-sm"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -69,7 +71,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-p-card-border bg-p-bg/95 backdrop-blur-xl md:hidden">
+        <div id="mobile-nav" className="border-t border-p-card-border bg-p-bg/95 backdrop-blur-xl md:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4">
             {NAV_LINKS.map((link) => (
               <Link

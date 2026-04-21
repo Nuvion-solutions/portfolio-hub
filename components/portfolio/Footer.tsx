@@ -8,19 +8,20 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div>
-            <Link href="/" className="font-heading text-base font-semibold text-p-fg">
+            <Link href="/" className="font-heading text-base font-semibold text-p-fg hover:text-p-accent transition-colors">
               Nuvion Solutions
             </Link>
             <p className="mt-1 text-xs text-p-muted">
-              AI-powered digital experiences that convert.
+              Custom websites &amp; AI-powered digital experiences.
             </p>
           </div>
 
-          <nav className="flex items-center gap-6 text-xs text-p-muted">
-            <Link href="/#work"     className="hover:text-p-fg transition-colors">Work</Link>
-            <Link href="/#services" className="hover:text-p-fg transition-colors">Services</Link>
-            <Link href="/#about"    className="hover:text-p-fg transition-colors">About</Link>
-            <Link href="/contact"   className="hover:text-p-fg transition-colors">Contact</Link>
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-p-muted">
+            <Link href="/case-studies" className="hover:text-p-fg transition-colors">Work</Link>
+            <Link href="/#services"    className="hover:text-p-fg transition-colors">Pricing</Link>
+            <Link href="/#process"     className="hover:text-p-fg transition-colors">Process</Link>
+            <Link href="/#faq"         className="hover:text-p-fg transition-colors">FAQ</Link>
+            <Link href="/contact"      className="hover:text-p-fg transition-colors">Contact</Link>
           </nav>
         </div>
 

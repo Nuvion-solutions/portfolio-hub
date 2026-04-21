@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Send, CheckCircle2, RotateCcw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -12,6 +12,7 @@ const INPUT_CLASS =
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [error,  setError]  = useState('')
+  const formRef             = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     if (status === 'error') {
@@ -19,6 +20,12 @@ export default function ContactForm() {
       return () => clearTimeout(t)
     }
   }, [status])
+
+  function resetForm() {
+    formRef.current?.reset()
+    setStatus('idle')
+    setError('')
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -39,7 +46,8 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(data),
       })
-      if (!res.ok) throw new Error('Failed to send message.')
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error ?? 'Failed to send message.')
       setStatus('success')
     } catch (err) {
       setStatus('error')
@@ -59,8 +67,8 @@ export default function ContactForm() {
             Thanks for reaching out. We&apos;ll respond within 24 hours with a custom strategy.
           </p>
           <button
-            onClick={() => setStatus('idle')}
-            className="mt-8 inline-flex items-center gap-2 rounded-lg border border-p-card-border px-5 py-2.5 text-sm font-medium text-p-muted transition-colors hover:border-p-accent/40 hover:text-p-accent"
+            onClick={resetForm}
+            className="mt-8 inline-flex items-center gap-2 rounded-lg border border-p-card-border px-5 py-2.5 text-sm font-medium text-p-muted transition-colors hover:border-p-accent/40 hover:text-p-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
           >
             <RotateCcw className="h-4 w-4" />
             Send another message
@@ -84,19 +92,34 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" noValidate>
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
                 Name
               </label>
-              <input id="name" name="name" required autoComplete="name" placeholder="Jane Smith" className={INPUT_CLASS} />
+              <input
+                id="name"
+                name="name"
+                required
+                autoComplete="name"
+                placeholder="Jane Smith"
+                className={INPUT_CLASS}
+              />
             </div>
             <div>
               <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
                 Email
               </label>
-              <input id="email" name="email" type="email" required autoComplete="email" placeholder="jane@business.com" className={INPUT_CLASS} />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="jane@business.com"
+                className={INPUT_CLASS}
+              />
             </div>
           </div>
 
@@ -104,7 +127,7 @@ export default function ContactForm() {
             <label htmlFor="niche" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-p-muted">
               Industry
             </label>
-            <select id="niche" name="niche" required className={INPUT_CLASS} defaultValue="">
+            <select id="niche" name="niche" required defaultValue="" className={INPUT_CLASS}>
               <option value="" disabled>Select your industry</option>
               {NICHES.map((n) => (
                 <option key={n} value={n}>{n}</option>
