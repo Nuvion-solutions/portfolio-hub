@@ -23,13 +23,13 @@ Personal injury law is one of the most competitive paid-search categories in the
 
 The problem runs deeper than aesthetics. PI firms have three specific conversion bottlenecks that generic web design cannot solve. First, a large percentage of visitors have weak cases — and firms waste hours on intake calls that lead nowhere. Second, prospective clients arrive with urgent legal questions that the site cannot answer, so they call a competitor who will. Third, clients often have documents — police reports, medical records, insurance letters — and no way to know whether those documents support a claim. They need guidance before they'll commit to a consultation.
 
-Hargrove & Associates wanted a site that addressed all three problems with AI: qualify leads before the phone rings, answer the questions that are driving the search, and give visitors a way to understand what their documents mean — all without a paralegal involved.
+This concept addresses all three problems with AI: qualify leads before the phone rings, answer the questions that are driving the search, and give visitors a way to understand what their documents mean — all without a paralegal involved.
 
 ---
 
 ## The Approach
 
-We structured the platform around Hargrove's intake funnel. Every element — from the practice area pages to the document analyzer — exists to move a visitor from "I might have a case" to "I need to call these people today." The three AI systems each remove a specific objection that was previously killing conversions.
+The platform is structured around the PI intake funnel. Every element — from the practice area pages to the document analyzer — exists to move a visitor from "I might have a case" to "I need to call these people today." The three AI systems each remove a specific objection that commonly kills conversions on generic PI sites.
 
 <StatRow stats={[
   { value: "3",    label: "Lead score tiers", sub: "STRONG · POSSIBLE · UNCLEAR" },
@@ -52,7 +52,7 @@ At the end of the flow, the system scores the lead across three tiers:
 
 **UNCLEAR** — Insufficient facts, potential statute issue, or no clear liable party. Sent a follow-up email asking for additional documentation before a consultation is scheduled.
 
-The firm sees each submission with a score, a plain-language reason, and a recommended next action. Intake calls run shorter because the attorney already knows what they're walking into.
+Firms using this platform see each submission with a score, a plain-language reason, and a recommended next action. Intake calls run shorter because the attorney already knows what they're walking into.
 
 <TechList heading="Technologies Used" items={[
   "Next.js 14 App Router",
@@ -96,7 +96,7 @@ Any query that doesn't match a keyword pattern escalates gracefully to a "schedu
 
 ## System 3: Document Intelligence
 
-The document analyzer is the feature that separates Hargrove's site from every competitor in the market. Prospective clients upload a document — a police report, a set of medical records, or an insurance letter — and the system parses it, identifies what type of document it is, and returns a plain-language summary of what it contains and why it matters to a personal injury claim.
+The document analyzer is the feature that separates a build like this from every competitor in the market. Prospective clients upload a document — a police report, a set of medical records, or an insurance letter — and the system parses it, identifies what type of document it is, and returns a plain-language summary of what it contains and why it matters to a personal injury claim.
 
 **Police report detection** — Extracts incident date, parties, cited violations, officer narrative, and fault indicators. Summarizes whether the report supports or complicates a liability argument.
 
@@ -111,7 +111,7 @@ The output is not legal advice — the interface makes that clear — but it is 
 
 ## Practice Area Pages
 
-Hargrove's five core practice areas each get a dedicated page built around the search queries and conversion signals specific to that case type.
+Five core practice areas each get a dedicated page built around the search queries and conversion signals specific to that case type.
 
 **Auto Accidents** — The highest-volume PI category. Page targets fault determination, uninsured motorist claims, and the post-accident steps most victims get wrong. Includes a mini-intake widget embedded mid-page.
 
@@ -147,7 +147,7 @@ Typography is authoritative — a serif heading face signals institutional weigh
     "Document Intelligence gives prospective clients immediate, specific value — the strongest trust signal before a consultation",
     "Police report, medical record, and insurance letter detection with plain-language summaries",
     "Five practice area pages with FAQ schema target the search queries that drive the highest-intent PI traffic",
-    "Supabase lead database with scoring history gives the firm a qualified pipeline, not a raw inbox"
+    "Supabase lead database with scoring history gives firms a qualified pipeline, not a raw inbox"
   ]}
 />
 
