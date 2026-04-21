@@ -1,13 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import { X, ArrowRight } from 'lucide-react'
 
 const STORAGE_KEY = 'portfolio-cta-dismissed'
 
 export default function StickyCTABar() {
-  const pathname = usePathname()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -22,7 +20,6 @@ export default function StickyCTABar() {
     setVisible(false)
   }
 
-  if (pathname === '/contact') return null
   if (!visible) return null
 
   return (
@@ -38,12 +35,12 @@ export default function StickyCTABar() {
 
         <div className="flex shrink-0 items-center gap-3">
           <a
-            href="https://nuvion-solutions.com"
+            href="https://www.nuvion-solutions.com/book"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-lg bg-p-accent px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-p-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
           >
-            Start a Project
+            Book a Call
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
 

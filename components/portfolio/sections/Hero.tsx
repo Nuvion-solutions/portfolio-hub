@@ -89,7 +89,13 @@ export default function Hero() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="/contact">Start a Project</Link>
+            <a
+              href="https://www.nuvion-solutions.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
+            </a>
           </Button>
         </motion.div>
 

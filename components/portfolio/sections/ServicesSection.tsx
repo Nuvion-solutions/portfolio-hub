@@ -57,7 +57,9 @@ export default function ServicesSection() {
             <p className="text-sm font-medium text-p-muted">Don't see your industry?</p>
             <p className="text-xs text-p-muted/70">We build for any service business.</p>
             <a
-              href="/contact"
+              href="https://www.nuvion-solutions.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-1 text-xs font-semibold text-p-accent hover:underline"
             >
               Let's talk →

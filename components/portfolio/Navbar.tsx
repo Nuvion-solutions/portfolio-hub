@@ -31,13 +31,13 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="h-7 w-7 rounded-md bg-accent-gradient flex items-center justify-center">
-            <span className="text-white text-xs font-bold">N</span>
-          </div>
-          <span className="font-heading text-base font-semibold text-p-fg group-hover:text-p-accent transition-colors">
-            Nuvion Solutions
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Nuvion Solutions">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/portfolio/nuvion-logo.png"
+            alt="Nuvion Solutions"
+            className="h-9 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -52,7 +52,13 @@ export default function Navbar() {
             </Link>
           ))}
           <Button asChild size="sm">
-            <Link href="/contact">Get in Touch</Link>
+            <a
+              href="https://www.nuvion-solutions.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
+            </a>
           </Button>
         </nav>
 
@@ -81,9 +87,14 @@ export default function Navbar() {
               </Link>
             ))}
             <Button asChild size="sm" className="mt-3 w-full">
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Get in Touch
-              </Link>
+              <a
+                href="https://www.nuvion-solutions.com/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                Book a Call
+              </a>
             </Button>
           </nav>
         </div>

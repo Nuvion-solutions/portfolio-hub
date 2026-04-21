@@ -153,7 +153,13 @@ export default function CaseStudyPage({ params }: PageProps) {
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <Button asChild size="lg">
-              <Link href="/contact">Start a Project</Link>
+              <a
+                href="https://www.nuvion-solutions.com/book"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Call
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="/case-studies">View More Work</Link>

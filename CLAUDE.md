@@ -186,20 +186,24 @@ placeholder rendering (shows a styled placeholder until real images are added).
 
 ---
 
-## Contact Form
+## Contact / Booking
 
-The contact form at `/contact` sends submissions via **Resend**.
+The portfolio has **no local contact form.** Every "Book a Call" / "Let's talk" / contact CTA
+links out to the main-site booking page:
+
+```
+https://www.nuvion-solutions.com/book
+```
+
+Use `target="_blank" rel="noopener noreferrer"` on every booking link. Do NOT re-introduce
+a `/contact` page or a Resend-powered form — all lead capture flows through the main site
+so every lead lands in one place.
 
 Required env vars (copy `.env.example` → `.env.local`):
 
 ```
-RESEND_API_KEY=re_...
-CONTACT_EMAIL_TO=hello@nuvion-solutions.com
 NEXT_PUBLIC_SITE_URL=https://portfolio.nuvion-solutions.com
 ```
-
-The API route is at `app/api/contact/route.ts`. Swap `from:` to a verified Resend domain
-before deploying to production.
 
 ---
 

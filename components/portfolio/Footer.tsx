@@ -8,10 +8,15 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div>
-            <Link href="/" className="font-heading text-base font-semibold text-p-fg">
-              Nuvion Solutions
+            <Link href="/" className="inline-flex items-center" aria-label="Nuvion Solutions">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/portfolio/nuvion-logo.png"
+                alt="Nuvion Solutions"
+                className="h-8 w-auto object-contain"
+              />
             </Link>
-            <p className="mt-1 text-xs text-p-muted">
+            <p className="mt-2 text-xs text-p-muted">
               AI-powered digital experiences that convert.
             </p>
           </div>
@@ -20,7 +25,14 @@ export default function Footer() {
             <Link href="/#work"     className="hover:text-p-fg transition-colors">Work</Link>
             <Link href="/#services" className="hover:text-p-fg transition-colors">Services</Link>
             <Link href="/#about"    className="hover:text-p-fg transition-colors">About</Link>
-            <Link href="/contact"   className="hover:text-p-fg transition-colors">Contact</Link>
+            <a
+              href="https://www.nuvion-solutions.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-p-fg transition-colors"
+            >
+              Book a Call
+            </a>
           </nav>
         </div>
 

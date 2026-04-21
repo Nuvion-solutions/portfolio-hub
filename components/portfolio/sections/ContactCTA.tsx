@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -36,16 +35,15 @@ export default function ContactCTA() {
               Tell us about your business. We'll respond within 24 hours with a custom
               strategy — no generic proposals, no hard sell.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex justify-center">
               <Button asChild size="lg">
-                <Link href="/contact">
-                  Start a Project
+                <a
+                  href="https://www.nuvion-solutions.com/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Call
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="ghost">
-                <a href="mailto:hello@nuvion-solutions.com">
-                  hello@nuvion-solutions.com
                 </a>
               </Button>
             </div>
