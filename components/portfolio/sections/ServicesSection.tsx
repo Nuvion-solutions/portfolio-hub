@@ -21,7 +21,7 @@ export default function ServicesSection() {
             What We Build
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-p-muted">
-            Specialized AI-powered web systems built for your specific industry — not generic
+            Specialized web systems built for your specific industry — not generic
             templates, but conversion-focused experiences.
           </p>
         </motion.div>

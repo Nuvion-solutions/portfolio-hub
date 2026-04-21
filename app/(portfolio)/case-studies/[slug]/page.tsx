@@ -105,7 +105,7 @@ export default function CaseStudyPage({ params }: PageProps) {
           {/* Meta row */}
           <div className="mt-8 flex flex-wrap gap-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-p-muted">Client</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-p-muted">Project</p>
               <p className="mt-1 text-sm text-p-fg">{study.client}</p>
             </div>
             <div>
@@ -149,7 +149,7 @@ export default function CaseStudyPage({ params }: PageProps) {
             Want something like this?
           </p>
           <p className="mt-2 text-p-muted">
-            We build custom AI-powered web systems. Let's talk about your project.
+            We build custom web systems. Let's talk about your project.
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <Button asChild size="lg">

@@ -18,10 +18,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: {
     template: '%s | Nuvion Solutions',
-    default:  'Nuvion Solutions — AI-Powered Web Experiences',
+    default:  'Nuvion Solutions — Web Experiences',
   },
   description:
-    'We build AI-powered digital experiences for med spas, startups, restaurants, law firms, and home service businesses.',
+    'We build digital experiences for med spas, startups, restaurants, law firms, and home service businesses.',
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://portfolio.nuvion-solutions.com'
   ),

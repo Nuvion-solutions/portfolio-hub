@@ -42,7 +42,7 @@ export const NICHES: NicheConfig[] = [
 
 export const SERVICES = [
   'Custom Web Design',
-  'AI-Powered Features',
+  'Intelligent Features',
   'Booking Automation',
   'Lead Generation Systems',
   'SEO & Local Search',

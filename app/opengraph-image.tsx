@@ -97,7 +97,7 @@ export default function OGImage() {
             marginBottom: '28px',
           }}
         >
-          AI-Powered Web Experiences
+          Web Experiences That Convert
         </div>
 
         {/* Sub-line */}

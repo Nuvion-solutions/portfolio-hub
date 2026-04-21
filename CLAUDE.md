@@ -9,9 +9,9 @@ with zero conflicts.
 
 ## Purpose
 
-- Demonstrate AI-powered web builds to prospective clients
+- Demonstrate web builds to prospective clients
 - Serve as a live proof-of-concept for each niche (Med Spa, AI Startup, Restaurant, Law Firm, Home Services)
-- Act as a lead generation asset that feeds the contact form into Resend
+- Act as a lead generation asset that funnels visitors to the main-site booking page
 
 ---
 
@@ -88,7 +88,7 @@ Both loaded via `next/font/google` in `app/layout.tsx`.
 ```yaml
 ---
 title: "Your Case Study Title"
-client: "Client Name or Demo: Client Name"
+client: "Business or Project Name"
 niche: "Med Spa"              # One of the five supported niches
 services:
   - "Service One"

@@ -8,7 +8,7 @@ import type { Niche } from '@/lib/portfolio/mdx'
 
 export const metadata: Metadata = {
   title:       'Case Studies',
-  description: 'Browse all Nuvion Solutions projects — AI-powered web experiences across five industries.',
+  description: 'Browse all Nuvion Solutions projects — web experiences across five industries.',
 }
 
 interface PageProps {

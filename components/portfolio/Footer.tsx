@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-2 text-xs text-p-muted">
-              AI-powered digital experiences that convert.
+              Digital experiences that convert.
             </p>
           </div>
 

@@ -7,8 +7,8 @@ import ContactCTA            from '@/components/portfolio/sections/ContactCTA'
 import { getFeaturedCaseStudies } from '@/lib/portfolio/mdx'
 
 export const metadata: Metadata = {
-  title:       { absolute: 'Nuvion Solutions — AI-Powered Web Experiences' },
-  description: 'We build AI-powered digital experiences for med spas, startups, restaurants, law firms, and home service businesses.',
+  title:       { absolute: 'Nuvion Solutions — Web Experiences' },
+  description: 'We build digital experiences for med spas, startups, restaurants, law firms, and home service businesses.',
 }
 
 export default function HomePage() {

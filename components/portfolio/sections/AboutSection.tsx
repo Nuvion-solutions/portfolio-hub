@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const DIFFERENTIATORS = [
   {
     title: 'AI-First Approach',
-    body:  'Every project ships with at least one AI-powered feature — from smart booking to personalized recommendations.',
+    body:  'Every project ships with at least one intelligent feature — from smart booking to personalized recommendations.',
   },
   {
     title: 'Industry-Specific Systems',

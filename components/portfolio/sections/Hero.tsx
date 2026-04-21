@@ -45,7 +45,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-p-accent/20 bg-p-accent/10 px-4 py-1.5"
         >
           <Sparkles className="h-3.5 w-3.5 text-p-accent" />
-          <span className="text-xs font-medium text-p-accent">AI-Powered Digital Experiences</span>
+          <span className="text-xs font-medium text-p-accent">Digital Experiences</span>
         </motion.div>
 
         {/* Headline */}
@@ -70,8 +70,7 @@ export default function Hero() {
           custom={0.2}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-p-muted md:text-xl"
         >
-          Explore fully functional demo sites — each one a real AI-powered business website
-          built by Nuvion Solutions.
+          Explore fully functional builds — each one a business website crafted by Nuvion Solutions.
         </motion.p>
 
         {/* CTAs */}
@@ -99,20 +98,6 @@ export default function Hero() {
           </Button>
         </motion.div>
 
-        {/* Social proof */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          custom={0.4}
-          className="mt-16 flex items-center justify-center gap-8 opacity-50"
-        >
-          {['Med Spa', 'AI Startup', 'Restaurant', 'Law Firm', 'Home Services'].map((niche) => (
-            <span key={niche} className="text-xs font-medium text-p-muted">
-              {niche}
-            </span>
-          ))}
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
