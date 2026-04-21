@@ -44,10 +44,6 @@ export default function CaseStudyPage({ params }: PageProps) {
     notFound()
   }
 
-  const publishedDate = new Date(study.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric',
-  })
-
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://portfolio.nuvion-solutions.com'
   const jsonLd = {
     '@context':  'https://schema.org',
@@ -91,10 +87,8 @@ export default function CaseStudyPage({ params }: PageProps) {
       {/* Hero area */}
       <div className="border-b border-p-card-border px-6 pb-12">
         <div className="mx-auto max-w-4xl">
-          {/* Niche + date */}
           <div className="mb-4 flex flex-wrap items-center gap-3">
             <Badge>{study.niche}</Badge>
-            <span className="text-xs text-p-muted">{publishedDate}</span>
           </div>
 
           <h1 className="font-heading text-4xl font-bold text-p-fg leading-tight md:text-5xl">
