@@ -7,7 +7,7 @@ import { NICHES } from '@/lib/portfolio/case-studies'
 
 const TIERS = [
   {
-    name:        'Simple & Clean',
+    name:        'Essential',
     tagline:     'Professional online presence',
     badge:       null,
     description: 'A fast, beautiful website that makes your business look credible and makes it easy for customers to reach you.',
@@ -21,7 +21,7 @@ const TIERS = [
     highlight: false,
   },
   {
-    name:        'Lead-Generating',
+    name:        'Growth',
     tagline:     'Built to grow your business',
     badge:       'Most Requested',
     description: 'A conversion-focused site with booking, lead tools, and local SEO that actively brings in new customers.',
@@ -35,7 +35,7 @@ const TIERS = [
     highlight: true,
   },
   {
-    name:        'AI-Powered',
+    name:        'Full System',
     tagline:     'Full digital system',
     badge:       null,
     description: 'An intelligent, automated platform — AI chat, smart workflows, and integrations that run your business online.',
