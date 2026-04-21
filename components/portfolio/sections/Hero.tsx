@@ -56,10 +56,10 @@ export default function Hero() {
           custom={0.1}
           className="font-heading text-5xl font-bold leading-tight text-p-fg md:text-6xl lg:text-7xl"
         >
-          We Build Websites{' '}
-          <span className="text-gradient">That Actually</span>
+          AI Automation.{' '}
+          <span className="text-gradient">Proven Across</span>
           <br />
-          Grow Your Business
+          5 Industries.
         </motion.h1>
 
         {/* Sub */}
@@ -70,8 +70,8 @@ export default function Hero() {
           custom={0.2}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-p-muted md:text-xl"
         >
-          Nuvion Solutions crafts high-converting, AI-enhanced web experiences for med spas,
-          tech startups, restaurants, law firms, and home service businesses.
+          Explore fully functional demo sites — each one a real AI-powered business website
+          built by Nuvion Solutions.
         </motion.p>
 
         {/* CTAs */}

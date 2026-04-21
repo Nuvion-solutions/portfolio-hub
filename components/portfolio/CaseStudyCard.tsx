@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import type { CaseStudyMeta } from '@/lib/portfolio/mdx'
+import { THUMBNAILS } from '@/components/portfolio/thumbnails'
 
 interface CaseStudyCardProps {
   study: CaseStudyMeta
@@ -70,13 +71,14 @@ const FALLBACK_STYLE: NicheStyle = {
 
 export default function CaseStudyCard({ study }: CaseStudyCardProps) {
   const style = NICHE_STYLES[study.niche] ?? FALLBACK_STYLE
+  const Thumbnail = THUMBNAILS[study.slug]
 
   return (
     <Link
       href={`/case-studies/${study.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-xl border border-p-card-border bg-p-card transition-all duration-300 hover:border-p-accent/30 hover:shadow-[0_0_32px_rgba(108,99,255,0.12)]"
     >
-      {/* Cover image / placeholder */}
+      {/* Cover image / thumbnail / placeholder */}
       <div className="relative h-52 overflow-hidden">
         {study.coverImage ? (
           <>
@@ -86,6 +88,10 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-p-card via-transparent to-transparent opacity-60" />
           </>
+        ) : Thumbnail ? (
+          <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105">
+            <Thumbnail />
+          </div>
         ) : (
           <div
             className={`flex h-full flex-col items-center justify-center gap-3 bg-gradient-to-br ${style.placeholderBg} border-b ${style.placeholderBorder}`}
