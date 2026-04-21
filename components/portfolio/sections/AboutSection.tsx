@@ -25,7 +25,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="border-t border-p-card-border py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-24">
           {/* Left: copy */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}

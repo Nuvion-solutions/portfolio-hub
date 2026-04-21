@@ -12,7 +12,7 @@ interface FeaturedCaseStudiesProps {
   studies: CaseStudyMeta[]
 }
 
-const base     = 'rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 border'
+const base     = 'rounded-full px-3 py-2 sm:px-4 sm:py-1.5 text-xs font-semibold transition-all duration-200 border'
 const activeCs = 'bg-p-accent border-p-accent text-white shadow-[0_0_12px_rgba(108,99,255,0.3)]'
 const idleCs   = 'border-p-card-border text-p-muted hover:border-p-fg/30 hover:text-p-fg'
 

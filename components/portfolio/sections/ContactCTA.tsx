@@ -14,7 +14,7 @@ export default function ContactCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-2xl border border-p-accent/20 bg-p-card p-10 text-center md:p-16"
+          className="relative overflow-hidden rounded-2xl border border-p-accent/20 bg-p-card p-6 text-center sm:p-10 md:p-16"
         >
           {/* Background glow */}
           <div aria-hidden className="pointer-events-none absolute inset-0">

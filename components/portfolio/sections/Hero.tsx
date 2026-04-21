@@ -61,7 +61,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           custom={0.1}
-          className="font-heading text-5xl font-bold leading-tight text-p-fg md:text-6xl lg:text-7xl"
+          className="font-heading text-4xl font-bold leading-tight text-p-fg sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Websites Built to{' '}
           <span className="text-gradient">Grow Your</span>
@@ -75,7 +75,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           custom={0.2}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-p-muted md:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-p-muted sm:text-lg md:text-xl"
         >
           From a clean 5-page site to a full AI-powered system — we design and build
           exactly what your business needs to grow online.{' '}

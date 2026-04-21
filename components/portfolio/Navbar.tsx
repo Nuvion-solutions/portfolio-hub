@@ -59,13 +59,13 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="flex md:hidden text-p-muted hover:text-p-fg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent rounded-sm"
+          className="flex md:hidden items-center justify-center h-11 w-11 -mr-2 text-p-muted hover:text-p-fg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-accent rounded-sm"
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="mobile-nav"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
@@ -78,12 +78,12 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm text-p-muted hover:text-p-fg transition-colors"
+                className="py-3 text-sm text-p-muted hover:text-p-fg transition-colors"
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="sm" className="mt-3 w-full">
+            <Button asChild size="lg" className="mt-3 w-full">
               <Link href="/contact" onClick={() => setOpen(false)}>
                 Get in Touch
               </Link>

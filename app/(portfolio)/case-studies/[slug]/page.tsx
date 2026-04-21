@@ -115,7 +115,7 @@ export default function CaseStudyPage({ params }: PageProps) {
             <span className="text-xs text-p-muted">{publishedDate}</span>
           </div>
 
-          <h1 className="font-heading text-4xl font-bold text-p-fg leading-tight md:text-5xl">
+          <h1 className="font-heading text-3xl font-bold text-p-fg leading-tight sm:text-4xl md:text-5xl">
             {study.title}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-p-muted">{study.excerpt}</p>
@@ -191,13 +191,13 @@ export default function CaseStudyPage({ params }: PageProps) {
             We build custom AI-powered web systems. Let&apos;s talk about your project.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="/contact">
                 Start a Project
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <Link href="/case-studies">View More Work</Link>
             </Button>
           </div>

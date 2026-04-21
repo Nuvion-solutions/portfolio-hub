@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-p-accent">
             Portfolio
           </p>
-          <h1 className="font-heading text-5xl font-bold text-p-fg">All Projects</h1>
+          <h1 className="font-heading text-3xl font-bold text-p-fg sm:text-4xl md:text-5xl">All Projects</h1>
           <p className="mt-4 max-w-lg text-p-muted">
             Real demos and client work across med spa, tech, restaurant, legal, home services, and luxury automotive.
           </p>

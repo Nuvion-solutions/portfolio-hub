@@ -78,7 +78,7 @@ export default function FAQSection() {
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
-                className="flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-white/[0.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
+                className="flex w-full items-start justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left transition-colors hover:bg-white/[0.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-p-accent"
               >
                 <span className="font-heading text-sm font-semibold text-p-fg sm:text-base">
                   {faq.q}
@@ -100,7 +100,7 @@ export default function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25, ease: 'easeInOut' }}
                   >
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-p-muted">
+                    <p className="px-4 sm:px-6 pb-5 text-sm leading-relaxed text-p-muted">
                       {faq.a}
                     </p>
                   </motion.div>

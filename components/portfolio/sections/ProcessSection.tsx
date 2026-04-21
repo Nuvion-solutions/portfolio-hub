@@ -60,7 +60,7 @@ export default function ProcessSection() {
             className="absolute left-0 right-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-p-card-border to-transparent lg:block"
           />
 
-          <div className="grid gap-8 lg:grid-cols-4">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-4">
             {STEPS.map((step, i) => (
               <motion.div
                 key={step.number}
@@ -96,7 +96,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-14 flex flex-col items-center justify-center gap-6 rounded-2xl border border-p-card-border bg-p-card p-8 text-center sm:flex-row sm:text-left"
+          className="mt-14 flex flex-col items-center justify-center gap-4 sm:gap-6 rounded-2xl border border-p-card-border bg-p-card p-5 sm:p-8 text-center sm:flex-row sm:text-left"
         >
           <div className="flex-1">
             <p className="font-heading text-lg font-semibold text-p-fg">Typical Project Timeline</p>

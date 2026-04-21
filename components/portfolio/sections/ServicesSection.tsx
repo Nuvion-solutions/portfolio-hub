@@ -76,7 +76,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.name}
@@ -84,7 +84,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative flex flex-col rounded-2xl border p-7 ${
+              className={`relative flex flex-col rounded-2xl border p-5 sm:p-7 ${
                 tier.highlight
                   ? 'border-p-accent/50 bg-p-card shadow-[0_0_40px_rgba(108,99,255,0.12)]'
                   : 'border-p-card-border bg-p-card'
@@ -161,7 +161,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-3">
           {NICHES.map((niche, i) => (
             <motion.div
               key={niche.slug}
@@ -169,7 +169,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group flex flex-col gap-3 rounded-xl border border-p-card-border bg-p-card p-6 transition-all hover:border-p-accent/30"
+              className="group flex flex-col gap-3 rounded-xl border border-p-card-border bg-p-card p-4 sm:p-6 transition-all hover:border-p-accent/30"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-p-accent/10 text-xl text-p-accent">
                 {niche.icon}
