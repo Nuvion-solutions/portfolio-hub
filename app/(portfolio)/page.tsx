@@ -4,7 +4,7 @@ import FeaturedCaseStudies   from '@/components/portfolio/sections/FeaturedCaseS
 import ServicesSection       from '@/components/portfolio/sections/ServicesSection'
 import AboutSection          from '@/components/portfolio/sections/AboutSection'
 import ContactCTA            from '@/components/portfolio/sections/ContactCTA'
-import { getFeaturedCaseStudies } from '@/lib/portfolio/mdx'
+import { getAllCaseStudies } from '@/lib/portfolio/mdx'
 
 export const metadata: Metadata = {
   title:       { absolute: 'Nuvion Solutions — AI-Powered Web Experiences' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  const featured = getFeaturedCaseStudies()
+  const featured = getAllCaseStudies()
 
   return (
     <>

@@ -1,16 +1,28 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import CaseStudyCard from '@/components/portfolio/CaseStudyCard'
-import type { CaseStudyMeta } from '@/lib/portfolio/mdx'
+import { NICHES } from '@/lib/portfolio/case-studies'
+import type { CaseStudyMeta, Niche } from '@/lib/portfolio/mdx'
 
 interface FeaturedCaseStudiesProps {
   studies: CaseStudyMeta[]
 }
 
+const base     = 'rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 border'
+const activeCs = 'bg-p-accent border-p-accent text-white shadow-[0_0_12px_rgba(108,99,255,0.3)]'
+const idleCs   = 'border-p-card-border text-p-muted hover:border-p-fg/30 hover:text-p-fg'
+
 export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProps) {
+  const [activeNiche, setActiveNiche] = useState<Niche | null>(null)
+
+  const filtered = activeNiche
+    ? studies.filter((s) => s.niche === activeNiche)
+    : studies
+
   if (studies.length === 0) return null
 
   return (
@@ -22,7 +34,7 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14 flex items-end justify-between"
+          className="mb-10 flex items-end justify-between"
         >
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-p-accent">
@@ -40,20 +52,59 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
           </Link>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {studies.map((study, i) => (
-            <motion.div
-              key={study.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+        {/* Filter buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-10 flex flex-wrap gap-2"
+        >
+          <button
+            onClick={() => setActiveNiche(null)}
+            className={`${base} ${activeNiche === null ? activeCs : idleCs}`}
+          >
+            All
+          </button>
+          {NICHES.map((n) => (
+            <button
+              key={n.slug}
+              onClick={() => setActiveNiche(n.label)}
+              className={`${base} ${activeNiche === n.label ? activeCs : idleCs}`}
             >
-              <CaseStudyCard study={study} />
-            </motion.div>
+              {n.label}
+            </button>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeNiche ?? 'all'}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
+            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {filtered.length > 0 ? (
+              filtered.map((study, i) => (
+                <motion.div
+                  key={study.slug}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                >
+                  <CaseStudyCard study={study} />
+                </motion.div>
+              ))
+            ) : (
+              <div className="col-span-full flex h-48 items-center justify-center rounded-xl border border-dashed border-p-card-border">
+                <p className="text-sm text-p-muted">No projects in this category yet.</p>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Mobile view all */}
         <div className="mt-8 text-center sm:hidden">
