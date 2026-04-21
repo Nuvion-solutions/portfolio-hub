@@ -6,9 +6,10 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const NAV_LINKS = [
-  { href: '/case-studies', label: 'Work' },
-  { href: '/#services',    label: 'Services' },
-  { href: '/#about',       label: 'About' },
+  { href: '/case-studies',                      label: 'Work' },
+  { href: '/#services',                         label: 'Services' },
+  { href: '/#about',                            label: 'About' },
+  { href: 'https://www.nuvion-solutions.com',   label: 'Main Site', external: true },
 ]
 
 export default function Navbar() {
@@ -43,13 +44,25 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-p-muted transition-colors hover:text-p-fg"
-            >
-              {link.label}
-            </Link>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-p-muted transition-colors hover:text-p-fg"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-p-muted transition-colors hover:text-p-fg"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
           <Button asChild size="sm">
             <a
@@ -77,14 +90,27 @@ export default function Navbar() {
         <div className="border-t border-p-card-border bg-p-bg/95 backdrop-blur-xl md:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="py-2 text-sm text-p-muted hover:text-p-fg transition-colors"
-              >
-                {link.label}
-              </Link>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="py-2 text-sm text-p-muted hover:text-p-fg transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="py-2 text-sm text-p-muted hover:text-p-fg transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Button asChild size="sm" className="mt-3 w-full">
               <a
