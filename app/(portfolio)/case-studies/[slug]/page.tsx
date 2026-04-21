@@ -114,7 +114,7 @@ export default function CaseStudyPage({ params }: PageProps) {
                 <ExternalLink className="h-4 w-4" />
               </a>
               <p className="mt-3 max-w-xl text-xs italic text-p-muted">
-                *This is not the client's real site — it's a copy for the portfolio that you can interact with, but certain features like forms or AI features may not work.
+                *This is a demo copy for our portfolio that you can interact with, but certain features like forms or AI features may not work.
               </p>
             </div>
           )}
