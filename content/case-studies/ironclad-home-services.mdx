@@ -1,0 +1,165 @@
+---
+title: "AI-Powered Home Services Platform"
+client: "Demo: IronClad Home Services"
+niche: "Home Services"
+services:
+  - "AI Quote Generator"
+  - "Emergency Triage Chatbot"
+  - "Smart Booking Automation"
+liveUrl: "https://homeservices.nuvion-solutions.com"
+featured: true
+excerpt: "A conversion-focused home services demo with 18 AI quote scenarios, 8 emergency triage flows, smart booking with calendar download, and full service pages for HVAC, plumbing, and electrical."
+results:
+  - "18 issue-specific AI quote scenarios across HVAC, plumbing, and electrical"
+  - "8 emergency triage scenarios with urgency levels and guided next steps"
+  - "Smart booking automation with calendar download and confirmation email"
+  - "Full HVAC, plumbing, and electrical service pages built to rank and convert"
+coverImage: "/portfolio/case-studies/ironclad-home-services/cover.jpg"
+publishedAt: "2026-04-20"
+---
+
+## The Challenge
+
+Home services is one of the highest-intent verticals on the internet. When someone searches "emergency plumber near me" at 11pm, they are not browsing — they are buying. The only question is which company's site earns their trust fast enough to get the call.
+
+Most home services websites fail at exactly this moment. They load slowly, bury the phone number, offer no sense of pricing, and force every visitor through the same generic "request a quote" form that dumps into an inbox nobody monitors after 5pm. The result: high-intent traffic leaks to whoever answers the phone first.
+
+IronClad came to us with a specific goal — build a site that qualifies leads, delivers instant value, and books jobs without requiring a human in the loop. The platform needed to handle everything from a routine HVAC tune-up request to a burst pipe at midnight, and it needed to handle it in a way that felt fast, trustworthy, and professional.
+
+---
+
+## The Approach
+
+We identified three moments where home services companies lose jobs they should win: the quote request (visitors leave when they can't get a ballpark number), the emergency call (no after-hours path to action), and the booking drop-off (friction between "I want this" and "it's scheduled"). We built a dedicated AI system for each one.
+
+<StatRow stats={[
+  { value: "18",   label: "AI quote scenarios", sub: "HVAC · Plumbing · Electrical" },
+  { value: "8",    label: "Emergency triage flows", sub: "With urgency classification" },
+  { value: "3",    label: "Full service verticals", sub: "Dedicated pages per trade" },
+  { value: "24/7", label: "Automated coverage", sub: "No staff required after hours" }
+]} />
+
+---
+
+## System 1: AI Quote Generator
+
+The quote generator covers 18 distinct issue scenarios across IronClad's three service trades. Visitors select their trade, describe the issue from a guided list, answer three to five follow-up questions about scope and property type, and receive an instant ballpark estimate with a breakdown of what drives the cost.
+
+This is not a form — it's a decision tool. By the time a visitor sees a number, they understand why the job costs what it costs, which reduces price objections before the technician even arrives. The estimate is presented alongside a "book this job" CTA, converting the quoting interaction directly into a scheduled appointment.
+
+The 18 scenarios span the most common call types across each trade:
+
+**HVAC** — AC not cooling, furnace not igniting, thermostat unresponsive, refrigerant leak, duct cleaning, seasonal tune-up
+
+**Plumbing** — Burst pipe, drain clog, water heater failure, low water pressure, toilet running, leak detection
+
+**Electrical** — Breaker tripping, outlet not working, panel upgrade, EV charger installation, ceiling fan replacement, whole-home rewire consult
+
+<TechList heading="Technologies Used" items={[
+  "Next.js 14 App Router",
+  "OpenAI GPT-4o",
+  "Framer Motion",
+  "Tailwind CSS",
+  "Resend (booking confirmations)",
+  "ics (calendar file generation)",
+  "Supabase (job queue + bookings)",
+  "Vercel"
+]} />
+
+---
+
+## System 2: Emergency Triage Chatbot
+
+The emergency triage system is the most operationally important feature on the site. When a homeowner has water coming through the ceiling at 2am, they do not need a contact form — they need someone to tell them what to do right now, whether this is a hold-the-bucket situation or a call-911 situation, and how fast a technician can realistically arrive.
+
+The chatbot handles eight emergency scenarios, each with a structured triage flow:
+
+1. **Burst or leaking pipe** — Locate shutoff valve, classify severity, dispatch priority
+2. **Gas smell** — Evacuate guidance, utility contact, emergency dispatch
+3. **No heat in winter** — Safety check, interim measures, urgency window
+4. **Electrical sparks or burning smell** — Breaker isolation, fire risk assessment, dispatch
+5. **Sewage backup** — Health hazard classification, containment steps, timeline
+6. **Flooding / water intrusion** — Source identification, damage mitigation, insurance note
+7. **AC failure in extreme heat** — Vulnerability check (elderly, infants), priority escalation
+8. **Complete power loss** — Utility vs. panel diagnosis, safety guidance
+
+Each scenario outputs an urgency level — **Critical**, **Urgent**, or **Monitor** — with plain-language reasoning. Critical scenarios trigger an after-hours dispatch flow. Urgent scenarios book the first available morning slot automatically. Monitor scenarios collect the lead and schedule a same-day callback.
+
+<ImageGrid
+  images={[
+    {
+      src: "/portfolio/case-studies/ironclad-home-services/quote-tool.jpg",
+      alt: "IronClad AI Quote Generator — HVAC scenario with instant estimate breakdown",
+      caption: "Quote Tool: 18 issue scenarios with guided intake and instant ballpark estimate"
+    },
+    {
+      src: "/portfolio/case-studies/ironclad-home-services/triage-chat.jpg",
+      alt: "Emergency Triage Chatbot — burst pipe scenario with urgency classification",
+      caption: "Emergency Triage: 8 scenarios, urgency levels, and after-hours dispatch flow"
+    },
+    {
+      src: "/portfolio/case-studies/ironclad-home-services/booking.jpg",
+      alt: "Smart booking interface with calendar download and confirmation email",
+      caption: "Smart Booking: Time slot selection, .ics calendar download, and Resend confirmation"
+    }
+  ]}
+  caption="Screenshots placeholder — swap with live site captures after deployment"
+/>
+
+---
+
+## System 3: Smart Booking Automation
+
+The booking system closes the loop between a quote or triage interaction and a confirmed job on the calendar. Visitors select a service window, confirm their address and contact details, and receive an immediate confirmation email with a `.ics` calendar file attached — compatible with Google Calendar, Apple Calendar, and Outlook.
+
+The confirmation email is generated by the AI and reads like it was written by a dispatcher who knows the job: it references the specific issue type, the estimated scope, what the technician will bring, and what the homeowner should have ready. No mail-merge templates. No "Your booking reference is #A4892."
+
+On the IronClad side, each booking lands in a Supabase job queue with full intake data, urgency classification from the triage system (if applicable), and the quote estimate as context for the technician. Dispatchers open the morning queue and see jobs that are already profiled — not raw form submissions.
+
+<QuoteCard
+  quote="The triage bot alone is worth the whole project. We used to lose emergency jobs because nobody answered at 2am. Now the site handles it, books the job, and the technician shows up knowing exactly what they're walking into."
+  name="Demo Client"
+  role="Operations Manager, Home Services Company (Simulated Testimonial)"
+/>
+
+---
+
+## Service Pages
+
+Beyond the AI systems, each of IronClad's three trades gets a dedicated service page built to rank for local search and convert on arrival.
+
+Each page follows the same conversion architecture: a trade-specific hero with a direct call to action, a service breakdown covering the most common jobs in that trade, a trust section with licensing and insurance callouts, an FAQ targeting the search queries that drive the most traffic, and a sticky CTA bar that persists on scroll.
+
+The pages are structured with semantic HTML and schema markup for local business, service, and FAQ — the three schema types that most directly drive rich results for home services queries.
+
+---
+
+## Design Direction
+
+IronClad's brand needed to communicate two things simultaneously: industrial reliability and modern professionalism. The palette pairs a deep navy base with safety-orange accents — a combination that reads "trades" without looking dated. Typography is heavy and geometric, built for scanning on mobile in stressful moments.
+
+Every interaction is optimized for the stressed homeowner on a phone. CTAs are large, tap targets are generous, and the most important action on any page — call or book — is always within thumb reach. The AI tools are presented as functional utilities, not product features; the emphasis is always on solving the problem, not on the technology solving it.
+
+---
+
+## Results
+
+<ResultsBlock
+  heading="What This Platform Delivers"
+  items={[
+    "18 issue-specific AI quote scenarios turn high-intent visits into booked jobs without a phone call",
+    "8 emergency triage flows with urgency classification capture after-hours leads that previously went to competitors",
+    "Smart booking with .ics calendar download and AI-written confirmation emails eliminates manual dispatcher follow-up",
+    "Full HVAC, plumbing, and electrical service pages built with local SEO schema for rich result eligibility",
+    "Supabase job queue gives dispatchers a profiled morning queue — no raw form data, no manual sorting",
+    "24/7 automated coverage with zero staff requirement after hours"
+  ]}
+/>
+
+---
+
+## What's Next
+
+This platform is production-ready for any home services company operating across multiple trades. The quote scenarios, triage flows, and service pages are parameterized — swap the trade list, pricing logic, and service area and the system is live in under two weeks.
+
+If you run an HVAC, plumbing, electrical, or multi-trade operation and your website isn't booking jobs while you sleep, this is the system that changes that.

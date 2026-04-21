@@ -1,0 +1,35 @@
+import Link from 'next/link'
+
+export default function Footer() {
+  const year = new Date().getFullYear()
+
+  return (
+    <footer className="border-t border-p-card-border bg-p-bg">
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <div>
+            <Link href="/" className="font-heading text-base font-semibold text-p-fg">
+              Nuvion Solutions
+            </Link>
+            <p className="mt-1 text-xs text-p-muted">
+              AI-powered digital experiences that convert.
+            </p>
+          </div>
+
+          <nav className="flex items-center gap-6 text-xs text-p-muted">
+            <Link href="/#work"     className="hover:text-p-fg transition-colors">Work</Link>
+            <Link href="/#services" className="hover:text-p-fg transition-colors">Services</Link>
+            <Link href="/#about"    className="hover:text-p-fg transition-colors">About</Link>
+            <Link href="/contact"   className="hover:text-p-fg transition-colors">Contact</Link>
+          </nav>
+        </div>
+
+        <div className="mt-8 border-t border-p-card-border pt-6 text-center text-xs text-p-muted">
+          © {year} Nuvion Solutions. All rights reserved.
+          <span className="mx-2 opacity-30">·</span>
+          <span className="text-p-accent/60">portfolio.nuvion-solutions.com</span>
+        </div>
+      </div>
+    </footer>
+  )
+}

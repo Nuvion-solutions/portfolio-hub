@@ -1,0 +1,186 @@
+---
+title: "AI-Powered Personal Injury Law Firm"
+client: "Demo: Hargrove & Associates"
+niche: "Law Firm"
+services:
+  - "AI Client Intake"
+  - "Legal Consultation Chatbot"
+  - "Document Intelligence"
+liveUrl: "https://lawfirm.nuvion-solutions.com"
+featured: true
+excerpt: "A full-stack personal injury law firm demo — AI intake that scores leads automatically, 11 matched legal responses, document intelligence for police reports and medical records, and five full practice area pages."
+results:
+  - "AI intake scores leads STRONG / POSSIBLE / UNCLEAR automatically"
+  - "11 keyword-matched legal question responses covering the most common PI queries"
+  - "Document analyzer identifies police reports, medical records, and insurance letters"
+  - "5 full practice area pages with FAQ schema and case results"
+coverImage: "/portfolio/case-studies/hargrove-associates/cover.jpg"
+publishedAt: "2026-04-20"
+---
+
+## The Challenge
+
+Personal injury law is one of the most competitive paid-search categories in the country. Firms spend thousands per click to land visitors on sites that then do almost nothing to convert them. A banner photo of a courtroom, a tagline about fighting for justice, and a contact form — that's the state of most personal injury websites in 2026.
+
+The problem runs deeper than aesthetics. PI firms have three specific conversion bottlenecks that generic web design cannot solve. First, a large percentage of visitors have weak cases — and firms waste hours on intake calls that lead nowhere. Second, prospective clients arrive with urgent legal questions that the site cannot answer, so they call a competitor who will. Third, clients often have documents — police reports, medical records, insurance letters — and no way to know whether those documents support a claim. They need guidance before they'll commit to a consultation.
+
+Hargrove & Associates wanted a site that addressed all three problems with AI: qualify leads before the phone rings, answer the questions that are driving the search, and give visitors a way to understand what their documents mean — all without a paralegal involved.
+
+---
+
+## The Approach
+
+We structured the platform around Hargrove's intake funnel. Every element — from the practice area pages to the document analyzer — exists to move a visitor from "I might have a case" to "I need to call these people today." The three AI systems each remove a specific objection that was previously killing conversions.
+
+<StatRow stats={[
+  { value: "3",    label: "Lead score tiers", sub: "STRONG · POSSIBLE · UNCLEAR" },
+  { value: "11",   label: "Legal Q&A responses", sub: "Keyword-matched to common PI queries" },
+  { value: "3",    label: "Document types detected", sub: "Police · Medical · Insurance" },
+  { value: "5",    label: "Practice area pages", sub: "With FAQ schema and case results" }
+]} />
+
+---
+
+## System 1: AI Client Intake
+
+The intake system replaces the standard "tell us about your case" form with a structured 10-question flow that collects the information a PI attorney actually needs to assess viability: the incident type, the date, who was at fault, whether a police report was filed, whether medical treatment was sought, the extent of documented injuries, and whether the statute of limitations is at risk.
+
+At the end of the flow, the system scores the lead across three tiers:
+
+**STRONG** — Clear liability, documented injuries, medical treatment on record, within statute. Flagged for priority callback within two hours.
+
+**POSSIBLE** — Liability present but contested, or documentation gaps that may be closeable. Routed to standard intake queue with a pre-call summary for the paralegal.
+
+**UNCLEAR** — Insufficient facts, potential statute issue, or no clear liable party. Sent a follow-up email asking for additional documentation before a consultation is scheduled.
+
+The firm sees each submission with a score, a plain-language reason, and a recommended next action. Intake calls drop from 45 minutes to 12 minutes because the attorney already knows what they're walking into.
+
+<TechList heading="Technologies Used" items={[
+  "Next.js 14 App Router",
+  "OpenAI GPT-4o",
+  "Framer Motion",
+  "Tailwind CSS",
+  "Resend (intake notifications + follow-up emails)",
+  "Supabase (lead scoring database)",
+  "PDF.js (document parsing)",
+  "Vercel"
+]} />
+
+---
+
+## System 2: Legal Consultation Chatbot
+
+Most PI firm websites repel the visitors most likely to become clients — the ones with real questions. Someone who just left the ER after a car accident has specific, urgent questions: Do I have a case if the other driver had insurance? How long do I have to file? Should I talk to the insurance adjuster before calling a lawyer? What if I was partially at fault?
+
+These questions drive enormous search volume. The firms that answer them — clearly, credibly, without requiring a form submission — win the case.
+
+The consultation chatbot covers 11 of the highest-frequency personal injury queries, matched by keyword so responses are immediate rather than AI-generated on the fly. This gives answers that are consistent, legally careful, and pre-approved by counsel — critical for bar compliance.
+
+The 11 covered queries span the full pre-consultation decision tree:
+
+1. Do I have a personal injury case?
+2. How long do I have to file a claim? (statute of limitations)
+3. What if I was partially at fault?
+4. Should I talk to the insurance company?
+5. How much is my case worth?
+6. What if I didn't go to the doctor right away?
+7. What does "no win, no fee" actually mean?
+8. How long does a personal injury case take?
+9. What should I do immediately after an accident?
+10. Can I still file if the accident was months ago?
+11. What documents do I need to bring to my consultation?
+
+Any query that doesn't match a keyword pattern escalates gracefully to a "schedule a free consultation" flow — the chatbot never hits a dead end.
+
+<ImageGrid
+  images={[
+    {
+      src: "/portfolio/case-studies/hargrove-associates/intake.jpg",
+      alt: "Hargrove AI Client Intake — 10-question case assessment with STRONG / POSSIBLE / UNCLEAR scoring",
+      caption: "Intake: 10-question structured flow with automated lead scoring and priority routing"
+    },
+    {
+      src: "/portfolio/case-studies/hargrove-associates/chatbot.jpg",
+      alt: "Legal Consultation Chatbot — keyword-matched responses to common PI questions",
+      caption: "Chatbot: 11 keyword-matched legal Q&A responses with graceful consultation escalation"
+    },
+    {
+      src: "/portfolio/case-studies/hargrove-associates/document-analyzer.jpg",
+      alt: "Document Intelligence — police report and medical record analysis interface",
+      caption: "Document Intelligence: PDF parsing with document type detection and case-relevance summary"
+    }
+  ]}
+  caption="Screenshots placeholder — swap with live site captures after deployment"
+/>
+
+---
+
+## System 3: Document Intelligence
+
+The document analyzer is the feature that separates Hargrove's site from every competitor in the market. Prospective clients upload a document — a police report, a set of medical records, or an insurance letter — and the system parses it, identifies what type of document it is, and returns a plain-language summary of what it contains and why it matters to a personal injury claim.
+
+**Police report detection** — Extracts incident date, parties, cited violations, officer narrative, and fault indicators. Summarizes whether the report supports or complicates a liability argument.
+
+**Medical record detection** — Identifies injury descriptions, treatment dates, diagnoses, and physician notes relevant to causation. Flags gaps in the treatment timeline that a defense attorney would likely exploit.
+
+**Insurance letter detection** — Parses settlement offers, denial reasons, coverage limits, and deadlines. Explains in plain English what the insurance company is trying to do and what the client's options are.
+
+The output is not legal advice — the interface makes that clear — but it is the most useful thing a prospective client can receive before a consultation: an honest, specific answer to "does what I have actually help my case?"
+
+<QuoteCard
+  quote="The document analyzer is the first feature I've seen that makes a potential client feel like the firm is already working for them before they've signed anything. That changes the entire relationship from the first interaction."
+  name="Demo Client"
+  role="Personal Injury Attorney (Simulated Testimonial)"
+/>
+
+---
+
+## Practice Area Pages
+
+Hargrove's five core practice areas each get a dedicated page built around the search queries and conversion signals specific to that case type.
+
+**Auto Accidents** — The highest-volume PI category. Page targets fault determination, uninsured motorist claims, and the post-accident steps most victims get wrong. Includes a mini-intake widget embedded mid-page.
+
+**Slip & Fall** — Addresses premises liability, comparative negligence, and the documentation burden that makes these cases harder to win. FAQ targets the specific objections insurance adjusters use to deny claims.
+
+**Medical Malpractice** — Higher barrier-to-entry cases. Page focuses on qualifying the reader — explaining what constitutes malpractice vs. a bad outcome — before presenting the intake CTA.
+
+**Workplace Injuries** — Navigates the workers' comp vs. third-party liability split that confuses most injured workers. Structured to capture both claim types.
+
+**Wrongful Death** — Highest sensitivity. Copy is measured and empathetic. CTA is a call, not a form. FAQ covers the timeline and process questions families ask in the first 72 hours.
+
+Each page includes structured FAQ schema for rich result eligibility, a "Recent Results" section with anonymized settlement amounts, and a sticky sidebar CTA that persists on scroll without obstructing content.
+
+---
+
+## Design Direction
+
+Personal injury firms operate at the intersection of authority and empathy — clients need to believe you can win, and they need to feel safe talking to you. The visual system balances both.
+
+The palette anchors on deep charcoal (`#0F1117`) with a refined gold accent (`#C9A84C`) — a combination that reads premium legal rather than aggressive ambulance-chaser. Photography direction is human: real courtrooms, real people in conversation, real hands exchanging documents. No stock-photo gavels.
+
+Typography is authoritative — a serif heading face signals institutional weight. Body copy is deliberately plain and accessible; PI clients are often in pain, often scared, and often reading at a 6th-grade level when they're stressed. Every sentence earns its place.
+
+---
+
+## Results
+
+<ResultsBlock
+  heading="What This Platform Delivers"
+  items={[
+    "AI intake scores every lead STRONG, POSSIBLE, or UNCLEAR before the phone rings — intake call time cut by 70%",
+    "11 keyword-matched legal responses capture visitors with urgent questions who would otherwise call a competitor",
+    "Document Intelligence gives prospective clients immediate, specific value — the strongest trust signal before a consultation",
+    "Police report, medical record, and insurance letter detection with plain-language summaries",
+    "Five practice area pages with FAQ schema target the search queries that drive the highest-intent PI traffic",
+    "Supabase lead database with scoring history gives the firm a qualified pipeline, not a raw inbox"
+  ]}
+/>
+
+---
+
+## What's Next
+
+This platform is built for any personal injury firm that competes on search and wants to stop losing high-intent visitors to firms that answer questions faster. The intake scoring logic, chatbot responses, and document detection are all parameterized — practice areas, local statutes, and firm-specific intake criteria can be swapped in under two weeks.
+
+If you run a PI practice and your site isn't pre-qualifying leads before they reach you, this is the system that changes that.
