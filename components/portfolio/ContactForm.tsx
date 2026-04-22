@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Send, CheckCircle2, RotateCcw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const NICHES = ['Med Spa', 'AI/Tech Startup', 'Restaurant', 'Law Firm', 'Home Services', 'Luxury Automotive', 'Other']
+const NICHES = ['Med Spa', 'AI/Tech Startup', 'Restaurant', 'Law Firm', 'Home Services', 'Luxury Automotive', 'Non-Profit', 'Luxury Aviation', 'Other']
 
 const INPUT_CLASS =
   'w-full rounded-lg border border-p-card-border bg-p-card px-4 py-2.5 text-sm text-p-fg placeholder:text-p-muted/50 focus:border-p-accent focus:outline-none focus:ring-1 focus:ring-p-accent transition-colors'
