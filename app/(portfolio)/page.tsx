@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import dynamic           from 'next/dynamic'
 import Hero              from '@/components/portfolio/sections/Hero'
 import FeaturedCaseStudies from '@/components/portfolio/sections/FeaturedCaseStudies'
-import { getAllCaseStudies } from '@/lib/portfolio/mdx'
+import { getFeaturedCaseStudies } from '@/lib/portfolio/mdx'
 
 const ServicesSection = dynamic(() => import('@/components/portfolio/sections/ServicesSection'))
 const ProcessSection  = dynamic(() => import('@/components/portfolio/sections/ProcessSection'))
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  const featured = getAllCaseStudies()
+  const featured = getFeaturedCaseStudies()
 
   return (
     <>

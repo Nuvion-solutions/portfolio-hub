@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
           </p>
           <h1 className="font-heading text-3xl font-bold text-p-fg sm:text-4xl md:text-5xl">All Projects</h1>
           <p className="mt-4 max-w-lg text-p-muted">
-            Real demos and client work across med spa, tech, restaurant, legal, home services, and luxury automotive.
+            Live demo builds across med spa, tech, restaurant, legal, home services, luxury automotive, non-profit, and aviation — showing exactly what we can build for you.
           </p>
         </div>
 

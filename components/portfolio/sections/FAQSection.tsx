@@ -11,7 +11,7 @@ const FAQS = [
   },
   {
     q: 'Are the sites in your portfolio real websites or just mockups?',
-    a: 'Every project in the portfolio is a fully functional, live website. Real booking systems, real AI tools, real data — all working right now. Click "View Live Demo" on any project and explore it yourself. What you see is exactly what we build.',
+    a: 'Every project in the portfolio is a fully built, live demo website — not a mockup or a Figma file. Real design, real code, real features. Some AI integrations vary by demo, but the sites themselves are live and explorable. Click "View Live Demo" on any project and see for yourself. What you see is exactly what we build.',
   },
   {
     q: 'What does a website typically cost?',

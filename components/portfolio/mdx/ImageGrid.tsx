@@ -22,8 +22,8 @@ export function ImageGrid({ images, caption }: ImageGridProps) {
   return (
     <figure className="my-10">
       <div className={`grid gap-3 ${cols}`}>
-        {images.map((img, i) => (
-          <div key={i} className="group overflow-hidden rounded-xl border border-p-card-border">
+        {images.map((img) => (
+          <div key={img.src} className="group overflow-hidden rounded-xl border border-p-card-border">
             <div className="relative aspect-video bg-p-card">
               {img.src.startsWith('/portfolio') ? (
                 <div className="flex h-full items-center justify-center bg-gradient-to-br from-p-card to-p-bg">

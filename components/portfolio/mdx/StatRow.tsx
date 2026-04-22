@@ -19,9 +19,9 @@ export function StatRow({ stats }: StatRowProps) {
           : 'grid-cols-2 md:grid-cols-4'
       }`}
     >
-      {stats.map((stat, i) => (
+      {stats.map((stat) => (
         <div
-          key={i}
+          key={`${stat.value}-${stat.label}`}
           className="flex flex-col items-center rounded-xl border border-p-card-border bg-p-card px-4 py-6 text-center"
         >
           <span className="font-heading text-3xl font-bold text-gradient md:text-4xl">

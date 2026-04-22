@@ -12,8 +12,8 @@ export function ResultsBlock({ items, heading = 'Key Outcomes' }: ResultsBlockPr
         {heading}
       </p>
       <ul className="space-y-3">
-        {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-3 text-p-fg">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-3 text-p-fg">
             <CheckCircle2
               className="mt-0.5 h-5 w-5 shrink-0 text-p-success"
               aria-hidden
