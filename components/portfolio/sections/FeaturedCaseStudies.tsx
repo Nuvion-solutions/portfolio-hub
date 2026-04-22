@@ -67,10 +67,10 @@ export default function FeaturedCaseStudies({ studies }: FeaturedCaseStudiesProp
           </span>
           <div>
             <p className="text-sm font-semibold text-p-fg">
-              Every project below is a live, working demo — not a mockup.
+              These are demo builds — not client mockups.
             </p>
             <p className="mt-0.5 text-sm text-p-muted">
-              Real AI, real booking systems, running right now. Click any card and try it yourself.
+              Each project showcases real design, real code, and AI-powered features built to demonstrate what&apos;s possible for your industry.
             </p>
           </div>
         </motion.div>
